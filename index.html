@@ -1,1 +1,110 @@
-<h1>Olá mundo</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Padaria Petrópolis</title>
+
+	<link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+
+</head>
+<body>
+	<h1>Cardápio</h1>
+	<h3>Selecione os produtos para fazer o pedido</h3>
+	<form>
+
+		<label class="list-group-item d-flex gap-2">
+			<input class="form-check-input flex-shrink-0 produto" type="checkbox" value="Pão">
+			<span style="width: 100%;">
+				<div style="float: left; margin: 5px;">
+					<img src="https://www.padariapetropolis.com.br/images/produtos_1.jpg" width="100px" >
+				</div>
+				<div>
+					Pão
+			  		<small class="d-block text-body-secondary ">Informações do Pão</small>
+				</div>
+			</span>
+		  </label>
+
+		  <label class="list-group-item d-flex gap-2">
+			<input class="form-check-input flex-shrink-0 produto" type="checkbox" value="Torta">
+			<span style="width: 100%;">
+				<div style="float: left; margin: 5px;">
+					<img src="https://www.padariapetropolis.com.br/images/produtos_2.jpg" width="100px" >
+				</div>
+				<div>
+					Torta
+			  		<small class="d-block text-body-secondary ">Informações da Torta</small>
+				</div>
+			</span>
+		  </label>
+
+		  <label class="list-group-item d-flex gap-2">
+			<input class="form-check-input flex-shrink-0 produto" type="checkbox" value="Strogonoff">
+			<span style="width: 100%;">
+				<div style="float: left; margin: 5px;">
+					<img src="https://www.padariapetropolis.com.br/images/produtos_4.jpg" width="100px" >
+				</div>
+				<div>
+					Strogonoff
+			  		<small class="d-block text-body-secondary ">Com arroz, salada e acompanhamento</small>
+				</div>
+			</span>
+		  </label>
+
+
+		  <label class="list-group-item d-flex gap-2">
+			<input class="form-check-input flex-shrink-0 produto" type="checkbox" value="Café">
+			<span style="width: 100%;">
+				<div style="float: left; margin: 5px;">
+					<img src="https://media-cdn.tripadvisor.com/media/photo-s/24/29/f1/77/caption.jpg" width="100px" >
+				</div>
+				<div>
+					Café
+			  		<small class="d-block text-body-secondary "></small>
+				</div>
+			</span>
+		  </label>
+
+		  <label class="list-group-item d-flex gap-2">
+			<input class="form-check-input flex-shrink-0 produto" type="checkbox" value="Cuca de Chocolate">
+			<span style="width: 100%;">
+				<div style="float: left; margin: 5px;">
+					<img src="https://www.padariapetropolis.com.br/UPLarquivos/20161004155057.jpg" width="100px" >
+				</div>
+				<div>
+					Cuca de Chocolate
+			  		<small class="d-block text-body-secondary "></small>
+				</div>
+			</span>
+		  </label>
+
+
+		<button type="button" class="btn btn-success" onclick="verificarItens()">Fazer meu pedido via Whatsapp</button>
+
+	</form>
+	<script>
+		function verificarItens() {
+
+			var mensagem = "Olá, gostaria de fazer um pedido com os seguintes itens:";
+
+			var itens = document.getElementsByClassName("produto");
+			var marcou = false;
+			for (var i = 0; i < itens.length; i++) {
+				if (itens[i].checked) {
+					console.log(1);
+					
+
+					mensagem += "%0A - "+itens[i].value;
+					marcou = true;
+
+				}
+			}
+
+			if(marcou){
+				//alert(mensagem);
+				window.location.href = "https://wa.me/5554991241849?text="+mensagem;
+			}
+		}
+	</script>
+</body>
+</html>
